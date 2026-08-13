@@ -37,7 +37,7 @@ const GAMES: Record<Level, Game[]> = {
       title: "Алфавит",
       subtitle: "The Russian alphabet",
       description:
-        "33 буквы в карточках. Гласные — красные, согласные — синие. Нажми, чтобы услышать звук.",
+        "33 ta harf kartochkalarda. Unlilar qizil, undoshlar ko‘k. Tovushni eshitish uchun bosing.",
       to: "/a1/alphabet",
       accent: "vowel",
     },
@@ -45,7 +45,7 @@ const GAMES: Record<Level, Game[]> = {
       title: "Род",
       subtitle: "Noun gender",
       description:
-        "ИИ придумывает слово уровня A1 — выбери мужской, женский или средний род.",
+        "AI A1 darajasidagi so‘z o‘ylab topadi — uning rodini (mujskoy, jenskiy yoki sredniy) toping.",
       to: "/a1/gender",
       accent: "consonant",
     },
@@ -71,7 +71,8 @@ function Index() {
           russian<span className="text-primary">.pro</span> grammar game
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
-          Учи русскую грамматику через игру — от алфавита до сложных конструкций.
+          Rus tili grammatikasini o‘yin orqali o‘rganing — alifbodan murakkab
+          qoidalargacha.
         </p>
       </header>
 
@@ -102,7 +103,7 @@ function Index() {
       <section className="mt-8 grid gap-4 sm:grid-cols-2">
         {games.length === 0 ? (
           <div className="sm:col-span-2 rounded-2xl border border-dashed border-border p-12 text-center text-muted-foreground">
-            Игры уровня {level} скоро появятся.
+            {level} darajasidagi o‘yinlar tez orada qo‘shiladi.
           </div>
         ) : (
           games.map((game) => (
