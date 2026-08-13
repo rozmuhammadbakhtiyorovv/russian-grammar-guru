@@ -57,7 +57,8 @@ function AlphabetGame() {
       <header className="mt-6">
         <h1 className="text-4xl font-black sm:text-5xl">Алфавит</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Нажми на букву, чтобы услышать её. Наведи курсор, чтобы узнать подробности.
+          Harfni eshitish uchun ustiga bosing. Batafsil ma’lumot uchun kursorni olib
+          boring.
         </p>
         <div className="mt-4 flex flex-wrap gap-3 text-xs">
           <span className="rounded-full bg-vowel-soft px-3 py-1 font-bold text-vowel">
