@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as A1AlphabetRouteImport } from './routes/a1/alphabet'
+import { Route as A1GenderRouteImport } from './routes/a1/gender'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const A1AlphabetRoute = A1AlphabetRouteImport.update({
   path: '/a1/alphabet',
   getParentRoute: () => rootRouteImport,
 } as any)
+const A1GenderRoute = A1GenderRouteImport.update({
+  id: '/a1/gender',
+  path: '/a1/gender',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a1/alphabet': typeof A1AlphabetRoute
+  '/a1/gender': typeof A1GenderRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/a1/alphabet': typeof A1AlphabetRoute
+  '/a1/gender': typeof A1GenderRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/a1/alphabet': typeof A1AlphabetRoute
+  '/a1/gender': typeof A1GenderRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/a1/alphabet'
+  fullPaths: '/' | '/a1/alphabet' | '/a1/gender'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/a1/alphabet'
-  id: '__root__' | '/' | '/a1/alphabet'
+  to: '/' | '/a1/alphabet' | '/a1/gender'
+  id: '__root__' | '/' | '/a1/alphabet' | '/a1/gender'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   A1AlphabetRoute: typeof A1AlphabetRoute
+  A1GenderRoute: typeof A1GenderRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof A1AlphabetRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/a1/gender': {
+      id: '/a1/gender'
+      path: '/a1/gender'
+      fullPath: '/a1/gender'
+      preLoaderRoute: typeof A1GenderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   A1AlphabetRoute: A1AlphabetRoute,
+  A1GenderRoute: A1GenderRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
