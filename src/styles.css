@@ -59,6 +59,15 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-vowel: var(--vowel);
+  --color-vowel-soft: var(--vowel-soft);
+  --color-consonant: var(--consonant);
+  --color-consonant-soft: var(--consonant-soft);
+  --color-sign: var(--sign);
+  --color-sign-soft: var(--sign-soft);
+  --color-success: var(--success);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
 }
 
 :root {
@@ -149,5 +158,17 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    background-image:
+      radial-gradient(circle at 12% -10%, oklch(0.62 0.22 27 / 18%), transparent 45%),
+      radial-gradient(circle at 88% 0%, oklch(0.58 0.19 255 / 18%), transparent 45%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
   }
 }
