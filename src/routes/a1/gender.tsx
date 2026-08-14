@@ -40,7 +40,7 @@ function GenderGame() {
     setLoading(true);
     setAnswer(null);
     try {
-      const word = await fetchWord({ data: { exclude: seen.current.slice(-10) } });
+      const word = await fetchWord({ data: { exclude: seen.current.slice(-30) } });
       seen.current = [...seen.current, word.word];
       setCurrent(word);
     } finally {
